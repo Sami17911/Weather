@@ -9,7 +9,7 @@ function all(data){
     document.getElementById('cloud').innerHTML=`${data.current.cloud}`;
 }
 
-fetch(`http://api.weatherapi.com/v1/current.json?key=b7c2405304384109954170447262705&q=Bihar&aqi=no`)
+fetch(`https://api.weatherapi.com/v1/current.json?key=b7c2405304384109954170447262705&q=Bihar&aqi=no`)
     .then(response=>response.json())
     .then((data)=>{
         all(data);
@@ -30,7 +30,7 @@ document.getElementById('location').addEventListener("keydown",(e)=>{
 
     const search=document.getElementById('location').value;
 
-    fetch(`http://api.weatherapi.com/v1/current.json?key=b7c2405304384109954170447262705&q=${search}&aqi=no`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=b7c2405304384109954170447262705&q=${search}&aqi=no`)
     .then(data=>data.json())
     .then(response=>update(response))
     .catch(error=>console.log(error));
